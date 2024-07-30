@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.10.35004.147
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{F012359B-7300-4D46-8176-370C299CD763}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{F012359B-7300-4D46-8176-370C299CD763}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DATA", "DATA\DATA.csproj", "{E0370F62-F855-48F3-AB9C-7E69B4A3B912}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DATA", "DATA\DATA.csproj", "{E0370F62-F855-48F3-AB9C-7E69B4A3B912}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{6E8E9106-0AFE-4960-885F-CBADA52FF4EF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{F96D85F3-6ED8-4DB1-983E-1EB196AAC674}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{6E8E9106-0AFE-4960-885F-CBADA52FF4EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{6E8E9106-0AFE-4960-885F-CBADA52FF4EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E8E9106-0AFE-4960-885F-CBADA52FF4EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E8E9106-0AFE-4960-885F-CBADA52FF4EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F96D85F3-6ED8-4DB1-983E-1EB196AAC674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F96D85F3-6ED8-4DB1-983E-1EB196AAC674}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F96D85F3-6ED8-4DB1-983E-1EB196AAC674}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F96D85F3-6ED8-4DB1-983E-1EB196AAC674}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
