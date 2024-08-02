@@ -1,0 +1,105 @@
+﻿@page "/branches"
+<link href="/customstyles.css" rel="stylesheet">
+@rendermode InteractiveServer
+
+<h3>Mis restaurantes</h3>
+
+
+@foreach (var item in BranchesList)
+{
+    <div class="card">
+        <div class="card-body">
+            <div class="text-center">
+                @if (String.IsNullOrEmpty(item.LogoUrl))
+                {
+                    <img src="https://ocli.com.mx/images/built/blog/icon64.png" alt="Store Icon" class="icon" />
+                }
+                else
+                {
+                    <img src="@item.LogoUrl" alt="Store Icon" class="icon" />
+                }
+                <h5 class="card-title">@item.Name</h5>
+                <p class="card-text">Teléfono: @item.PhoneNumber</p>
+                <button class="btn btn-primary">Seleccionar</button>
+            </div>
+            <div class="mt-3">
+                @if (item.Status != Domain.Enums.StatusBranch.completed)
+                {
+                    <p class="text-danger">• Faltan estos datos para la activación de tu sucursal:</p>
+                    <ul>
+                        @foreach (var item2 in item.Descriptions)
+                        {
+                            <li>@item2</li>
+                        }
+                    </ul>
+                }
+
+            </div>
+        </div>
+    </div>
+}
+
+
+
+<div class="card">
+    <div class="card-body">
+        <div class="text-center">
+
+            <img src="https://ocli.com.mx/images/built/blog/icon64.png" alt="Store Icon" class="icon" />
+
+            <h5 class="card-title">Crea tu sucursal</h5>
+            <button class="btn btn-primary" @onclick="create">Click me</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+@code {
+
+    public List<BranchDTO> BranchesList { get; set; } = new List<BranchDTO>
+{
+        new BranchDTO {  BranchId =Guid.NewGuid().ToString(), Name ="EricksPizza" , LogoUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNAa4062cZ_Jc12h4rNtyn8G37HyuVnRKDKQ&s",
+            Descriptions= new List<string>
+{
+                "Faltaron tus datos bancarios"
+            },
+            PhoneNumber="6622333344", Status = Domain.Enums.StatusBranch.incompleted },
+        new BranchDTO {  BranchId =Guid.NewGuid().ToString(), Name ="GermansBurugers" ,
+                        Descriptions= new List<string>
+            {
+            }
+            , PhoneNumber="6622333344", Status = Domain.Enums.StatusBranch.completed },
+        new BranchDTO {  BranchId =Guid.NewGuid().ToString(), Name ="CristiansTacos" ,
+                        Descriptions= new List<string>
+{
+                "Faltaron tus datos bancarios",
+                "Faltaron tus datos personales",
+                "Faltaron tus datos Fiscales",
+            }, PhoneNumber="6622333344", Status = Domain.Enums.StatusBranch.incompleted },
+    };
+
+
+
+    void create()
+    {
+        BranchDTO dto = new BranchDTO
+        {
+            BranchId = Guid.NewGuid().ToString(),
+            Name = $"Restaurante no:"+ BranchesList.Count(),
+            Descriptions = new List<string>
+            {
+                "Datos por llenar *"
+            },
+            PhoneNumber = "6622333344",
+            Status = Domain.Enums.StatusBranch.incompleted
+        };
+
+        BranchesList.Add(dto);
+    }
+}
+
